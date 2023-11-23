@@ -173,3 +173,15 @@ INSERT INTO Reservas (id, cod, data_reserva, id_cliente, id_livro) VALUES
 (18, 3018, '2024-07-25', 118, 16),
 (19, 3019, '2024-08-30', 119, 18),
 (20, 3020, '2024-10-05', 120, 20);
+
+INSERT INTO Fornecedores (id, cod, nome, telefone, email) VALUES
+(1, 4001, 'Fornecedor A', '(11) 1234-5678', 'fornecedor_a@example.com'),
+(2, 4002, 'Fornecedor B', '(21) 2345-6789', 'fornecedor_b@example.com'),
+(3, 4003, 'Fornecedor C', '(31) 3456-7890', 'fornecedor_c@example.com'),
+(4, 4004, 'Fornecedor D', '(41) 4567-8901', 'fornecedor_d@example.com'),
+(5, 4005, 'Fornecedor E', '(51) 5678-9012', 'fornecedor_e@example.com'),
+(6, 4006, 'Fornecedor F', '(61) 6789-0123', 'fornecedor_f@example.com'),
+(7, 4007, 'Fornecedor G', '(71) 7890-1234', 'fornecedor_g@example.com'),
+(8, 4008, 'Fornecedor H', '(81) 8901-2345', 'fornecedor_h@example.com'),
+(9, 4009, 'Fornecedor I', '(91) 9012-3456', 'fornecedor_i@example.com'),
+(10, 4010, 'Fornecedor J', '(101) 0123-4567', 'fornecedor_j@example.com');

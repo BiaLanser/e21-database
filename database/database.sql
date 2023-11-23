@@ -49,3 +49,4 @@ CREATE TABLE Pedidos_fornecedores(
      PRIMARY KEY (id),
      FOREIGN KEY (id_fornecedor) REFERENCES Fornecedores (id)
 );
+
