@@ -1,4 +1,4 @@
-CREATE TABLE Livros(
+CREATE TABLE livros(
     id INT NOT NULL,
     cod INT NOT NULL,
     titulo VARCHAR(150) NOT NULL,
@@ -7,7 +7,7 @@ CREATE TABLE Livros(
     PRIMARY KEY(id)
 );
 
-CREATE TABLE Secoes(
+CREATE TABLE secoes(
     id INT NOT NULL,
     cod INT NOT NULL,
     nome VARCHAR(150),
@@ -15,18 +15,19 @@ CREATE TABLE Secoes(
     PRIMARY KEY(id)
 );
 
-CREATE TABLE Vendas(
+CREATE TABLE vendas(
     id INT NOT NULL,
     cod INT NOT NULL,
     data_venda VARCHAR(150),
     numero VARCHAR(150),
     id_cliente INT,
     id_vendedor INT,
-    FOREIGN KEY (id_cliente) REFERENCES Clientes(id)
-    FOREIGN KEY (id_vendedor) REFERENCES Vendedores(id) PRIMARY KEY(id)
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id),
+    FOREIGN KEY (id_vendedor) REFERENCES vendedores(id),
+    PRIMARY KEY(id)
 );
 
-CREATE TABLE Itens_Vendidos(
+CREATE TABLE itens_vendidos(
     id INT NOT NULL,
     cod INT NOT NULL,
     sequencia VARCHAR(150),
@@ -37,14 +38,14 @@ CREATE TABLE Itens_Vendidos(
     PRIMARY KEY(id)
 );
 
-CREATE TABLE Vendedores(
+CREATE TABLE vendedores(
     id INT NOT NULL,
     cod INT NOT NULL,
     nome VARCHAR(150),
     PRIMARY KEY(id)
 );
 
-CREATE TABLE Clientes(
+CREATE TABLE clientes(
      id INT NOT NULL,
      cod INT NOT NULL,
      nome VARCHAR(150),
@@ -54,7 +55,7 @@ CREATE TABLE Clientes(
      PRIMARY KEY (id)
 );
 
-CREATE TABLE Emprestimos(
+CREATE TABLE emprestimos(
      id INT NOT NULL,
      cod INT NOT NULL,
      data_emprestimo DATE,
@@ -62,22 +63,22 @@ CREATE TABLE Emprestimos(
      id_cliente INT,
      id_livro INT,
      PRIMARY KEY (id),
-     FOREIGN KEY (id_cliente) REFERENCES Clientes (id),
-     FOREIGN KEY (id_livro) REFERENCES Livros (id),
+     FOREIGN KEY (id_cliente) REFERENCES clientes (id),
+     FOREIGN KEY (id_livro) REFERENCES livros (id),
 );
 
-CREATE TABLE Reservas(
+CREATE TABLE reservas(
      id INT NOT NULL,
      cod INT NOT NULL,
      data_reserva DATE,
      id_cliente INT,
      id_livro INT,
      PRIMARY KEY (id),
-     FOREIGN KEY (id_cliente) REFERENCES Clientes (id),
-     FOREIGN KEY (id_livro) REFERENCES Livros (id),
+     FOREIGN KEY (id_cliente) REFERENCES clientes (id),
+     FOREIGN KEY (id_livro) REFERENCES livros (id),
 );
 
-CREATE TABLE Fornecedores(
+CREATE TABLE fornecedores(
      id INT NOT NULL,
      cod INT NOT NULL,
      nome VARCHAR(150),
@@ -86,12 +87,12 @@ CREATE TABLE Fornecedores(
      PRIMARY KEY (id)
 );
 
-CREATE TABLE Pedidos_fornecedores(
+CREATE TABLE pedidos_fornecedores(
      id INT NOT NULL,
      cod INT NOT NULL,
      data_pedido DATE,
      id_fornecedor INT,
      detalhes VARCHAR(150),
      PRIMARY KEY (id),
-     FOREIGN KEY (id_fornecedor) REFERENCES Fornecedores (id)
+     FOREIGN KEY (id_fornecedor) REFERENCES fornecedores (id)
 );
