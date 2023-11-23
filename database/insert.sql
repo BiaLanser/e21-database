@@ -185,3 +185,26 @@ INSERT INTO Fornecedores (id, cod, nome, telefone, email) VALUES
 (8, 4008, 'Fornecedor H', '(81) 8901-2345', 'fornecedor_h@example.com'),
 (9, 4009, 'Fornecedor I', '(91) 9012-3456', 'fornecedor_i@example.com'),
 (10, 4010, 'Fornecedor J', '(101) 0123-4567', 'fornecedor_j@example.com');
+
+INSERT INTO Pedidos_fornecedores (id, cod, data_pedido, id_fornecedor, detalhes) VALUES
+(1, 5001, '2023-01-01', 1, 'Detalhes do Pedido 1'),
+(2, 5002, '2023-02-05', 2, 'Detalhes do Pedido 2'),
+(3, 5003, '2023-03-10', 3, 'Detalhes do Pedido 3'),
+(4, 5004, '2023-04-15', 4, 'Detalhes do Pedido 4'),
+(5, 5005, '2023-05-20', 5, 'Detalhes do Pedido 5'),
+(6, 5006, '2023-06-25', 6, 'Detalhes do Pedido 6'),
+(7, 5007, '2023-07-30', 7, 'Detalhes do Pedido 7'),
+(8, 5008, '2023-08-05', 8, 'Detalhes do Pedido 8'),
+(9, 5009, '2023-09-10', 9, 'Detalhes do Pedido 9'),
+(10, 5010, '2023-10-15', 10, 'Detalhes do Pedido 10'),
+(11, 5011, '2023-11-20', 1, 'Detalhes do Pedido 11'),
+(12, 5012, '2023-12-25', 2, 'Detalhes do Pedido 12'),
+(13, 5013, '2024-01-30', 3, 'Detalhes do Pedido 13'),
+(14, 5014, '2024-03-05', 4, 'Detalhes do Pedido 14'),
+(15, 5015, '2024-04-10', 5, 'Detalhes do Pedido 15'),
+(16, 5016, '2024-05-15', 6, 'Detalhes do Pedido 16'),
+(17, 5017, '2024-06-20', 7, 'Detalhes do Pedido 17'),
+(18, 5018, '2024-07-25', 8, 'Detalhes do Pedido 18'),
+(19, 5019, '2024-08-30', 9, 'Detalhes do Pedido 19'),
+(20, 5020, '2024-10-05', 10, 'Detalhes do Pedido 20');
+
