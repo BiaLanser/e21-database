@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS  secoes(
 
 DROP TABLE IF EXISTS vendas;
 
-CREATE TABLE IF NOT EXISTS  vendas(
+CREATE TABLE IF NOT EXISTS vendas(
     id INT NOT NULL,
     cod INT NOT NULL,
     data_venda VARCHAR(150),
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS  vendas(
     item1 INT,
     id_cliente INT,
     id_vendedor INT,
-    id_item_vendido INT,
+    id_item_1 INT,
     FOREIGN KEY (id_cliente) REFERENCES clientes(id),
     FOREIGN KEY (id_vendedor) REFERENCES vendedores(id),
     FOREIGN KEY (id_item_vendido) REFERENCES itens_vendidos(id),
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS  vendas(
 
 DROP TABLE IF EXISTS itens_vendidos;
 
-CREATE TABLE IF NOT EXISTS  itens_vendidos(
+CREATE TABLE IF NOT EXISTS itens_vendidos(
     id INT NOT NULL,
     cod INT NOT NULL,
     sequencia VARCHAR(150),
@@ -101,7 +101,7 @@ CREATE TABLE IF NOT EXISTS  reservas(
 
 DROP TABLE IF EXISTS fornecedores;
 
-CREATE TABLE IF NOT EXISTS  fornecedores(
+CREATE TABLE IF NOT EXISTS fornecedores(
      id INT NOT NULL,
      cod INT NOT NULL,
      nome VARCHAR(150),
