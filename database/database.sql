@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS livros;
 
-CREATE TABLE livros(
+CREATE TABLE IF NOT EXISTS  livros(
     id INT NOT NULL,
     cod INT NOT NULL,
     titulo VARCHAR(150) NOT NULL,
@@ -13,7 +13,7 @@ CREATE TABLE livros(
 
 DROP TABLE IF EXISTS secoes;
 
-CREATE TABLE secoes(
+CREATE TABLE IF NOT EXISTS  secoes(
     id INT NOT NULL,
     cod INT NOT NULL,
     nome VARCHAR(150),
@@ -23,7 +23,7 @@ CREATE TABLE secoes(
 
 DROP TABLE IF EXISTS vendas;
 
-CREATE TABLE vendas(
+CREATE TABLE IF NOT EXISTS  vendas(
     id INT NOT NULL,
     cod INT NOT NULL,
     data_venda VARCHAR(150),
@@ -40,7 +40,7 @@ CREATE TABLE vendas(
 
 DROP TABLE IF EXISTS itens_vendidos;
 
-CREATE TABLE itens_vendidos(
+CREATE TABLE IF NOT EXISTS  itens_vendidos(
     id INT NOT NULL,
     cod INT NOT NULL,
     sequencia VARCHAR(150),
@@ -53,7 +53,7 @@ CREATE TABLE itens_vendidos(
 
 DROP TABLE IF EXISTS vendedores;
 
-CREATE TABLE vendedores(
+CREATE TABLE IF NOT EXISTS  vendedores(
     id INT NOT NULL,
     cod INT NOT NULL,
     nome VARCHAR(150),
@@ -62,7 +62,7 @@ CREATE TABLE vendedores(
 
 DROP TABLE IF EXISTS clientes;
 
-CREATE TABLE clientes(
+CREATE TABLE IF NOT EXISTS  clientes(
      id INT NOT NULL,
      cod INT NOT NULL,
      nome VARCHAR(150),
@@ -74,7 +74,7 @@ CREATE TABLE clientes(
 
 DROP TABLE IF EXISTS emprestimos;
 
-CREATE TABLE emprestimos(
+CREATE TABLE IF NOT EXISTS  emprestimos(
      id INT NOT NULL,
      cod INT NOT NULL,
      data_emprestimo DATE,
@@ -88,7 +88,7 @@ CREATE TABLE emprestimos(
 
 DROP TABLE IF EXISTS reservas;
 
-CREATE TABLE reservas(
+CREATE TABLE IF NOT EXISTS  reservas(
      id INT NOT NULL,
      cod INT NOT NULL,
      data_reserva DATE,
@@ -101,7 +101,7 @@ CREATE TABLE reservas(
 
 DROP TABLE IF EXISTS fornecedores;
 
-CREATE TABLE fornecedores(
+CREATE TABLE IF NOT EXISTS  fornecedores(
      id INT NOT NULL,
      cod INT NOT NULL,
      nome VARCHAR(150),
@@ -112,7 +112,7 @@ CREATE TABLE fornecedores(
 
 DROP TABLE IF EXISTS pedidos_fornecedores;
 
-CREATE TABLE pedidos_fornecedores(
+CREATE TABLE IF NOT EXISTS pedidos_fornecedores(
      id INT NOT NULL,
      cod INT NOT NULL,
      data_pedido DATE,
