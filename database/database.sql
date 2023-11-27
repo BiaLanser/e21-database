@@ -11,7 +11,7 @@ CREATE TABLE livros(
     FOREIGN KEY (id_secao) REFERENCES secao(id)
 );
 
-DROP TABLE IF EXISTS  secoes;
+DROP TABLE IF EXISTS secoes;
 
 CREATE TABLE secoes(
     id INT NOT NULL,
@@ -21,7 +21,7 @@ CREATE TABLE secoes(
     PRIMARY KEY(id)
 );
 
-DROP TABLE IF EXISTS  vendas;
+DROP TABLE IF EXISTS vendas;
 
 CREATE TABLE vendas(
     id INT NOT NULL,
@@ -31,13 +31,14 @@ CREATE TABLE vendas(
     item1 INT,
     id_cliente INT,
     id_vendedor INT,
+    id_item_vendido INT,
     FOREIGN KEY (id_cliente) REFERENCES clientes(id),
     FOREIGN KEY (id_vendedor) REFERENCES vendedores(id),
-    FOREIGN KEY (id_item_vendido) REFERENCES Vendedores(id),
+    FOREIGN KEY (id_item_vendido) REFERENCES itens_vendidos(id),
     PRIMARY KEY(id)
 );
 
-DROP TABLE IF EXISTS  itens_vendidos;
+DROP TABLE IF EXISTS itens_vendidos;
 
 CREATE TABLE itens_vendidos(
     id INT NOT NULL,
@@ -50,7 +51,7 @@ CREATE TABLE itens_vendidos(
     PRIMARY KEY(id)
 );
 
-DROP TABLE IF EXISTS  vendedores;
+DROP TABLE IF EXISTS vendedores;
 
 CREATE TABLE vendedores(
     id INT NOT NULL,
@@ -59,7 +60,7 @@ CREATE TABLE vendedores(
     PRIMARY KEY(id)
 );
 
-DROP TABLE IF EXISTS  clientes;
+DROP TABLE IF EXISTS clientes;
 
 CREATE TABLE clientes(
      id INT NOT NULL,
@@ -71,7 +72,7 @@ CREATE TABLE clientes(
      PRIMARY KEY (id)
 );
 
-DROP TABLE IF EXISTS  emprestimos;
+DROP TABLE IF EXISTS emprestimos;
 
 CREATE TABLE emprestimos(
      id INT NOT NULL,
@@ -82,10 +83,10 @@ CREATE TABLE emprestimos(
      id_livro INT,
      PRIMARY KEY (id),
      FOREIGN KEY (id_cliente) REFERENCES clientes (id),
-     FOREIGN KEY (id_livro) REFERENCES livros (id),
+     FOREIGN KEY (id_livro) REFERENCES livros (id)
 );
 
-DROP TABLE IF EXISTS  reservas;
+DROP TABLE IF EXISTS reservas;
 
 CREATE TABLE reservas(
      id INT NOT NULL,
@@ -95,10 +96,10 @@ CREATE TABLE reservas(
      id_livro INT,
      PRIMARY KEY (id),
      FOREIGN KEY (id_cliente) REFERENCES clientes (id),
-     FOREIGN KEY (id_livro) REFERENCES livros (id),
+     FOREIGN KEY (id_livro) REFERENCES livros (id)
 );
 
-DROP TABLE IF EXISTS  fornecedores;
+DROP TABLE IF EXISTS fornecedores;
 
 CREATE TABLE fornecedores(
      id INT NOT NULL,
@@ -109,7 +110,7 @@ CREATE TABLE fornecedores(
      PRIMARY KEY (id)
 );
 
-DROP TABLE IF EXISTS  pedidos_fornecedores;
+DROP TABLE IF EXISTS pedidos_fornecedores;
 
 CREATE TABLE pedidos_fornecedores(
      id INT NOT NULL,
