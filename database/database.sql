@@ -31,9 +31,10 @@ CREATE TABLE vendas(
     item1 INT,
     id_cliente INT,
     id_vendedor INT,
+    id_item_vendido INT,
     FOREIGN KEY (id_cliente) REFERENCES clientes(id),
     FOREIGN KEY (id_vendedor) REFERENCES vendedores(id),
-    FOREIGN KEY (id_item_vendido) REFERENCES vendedores(id),
+    FOREIGN KEY (id_item_vendido) REFERENCES itens_vendidos(id),
     PRIMARY KEY(id)
 );
 
