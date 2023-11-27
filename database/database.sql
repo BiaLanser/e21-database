@@ -4,7 +4,9 @@ CREATE TABLE livros(
     titulo VARCHAR(150) NOT NULL,
     autor VARCHAR(150),
     preco VARCHAR(10),
+    id_secao INT
     PRIMARY KEY(id)
+    FOREIGN KEY (id_secao) REFERENCES secao(id)
 );
 
 CREATE TABLE secoes(
