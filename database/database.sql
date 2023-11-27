@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS livros;
+
 CREATE TABLE livros(
     id INT NOT NULL,
     cod INT NOT NULL,
@@ -9,6 +11,8 @@ CREATE TABLE livros(
     FOREIGN KEY (id_secao) REFERENCES secao(id)
 );
 
+DROP TABLE IF EXISTS secoes;
+
 CREATE TABLE secoes(
     id INT NOT NULL,
     cod INT NOT NULL,
@@ -16,6 +20,8 @@ CREATE TABLE secoes(
     localizacao VARCHAR(150),
     PRIMARY KEY(id)
 );
+
+DROP TABLE IF EXISTS vendas;
 
 CREATE TABLE vendas(
     id INT NOT NULL,
@@ -27,9 +33,11 @@ CREATE TABLE vendas(
     id_vendedor INT,
     FOREIGN KEY (id_cliente) REFERENCES clientes(id),
     FOREIGN KEY (id_vendedor) REFERENCES vendedores(id),
-    FOREIGN KEY (id_item_vendido) REFERENCES Vendedores(id),
+    FOREIGN KEY (id_item_vendido) REFERENCES vendedores(id),
     PRIMARY KEY(id)
 );
+
+DROP TABLE IF EXISTS itens_vendidos;
 
 CREATE TABLE itens_vendidos(
     id INT NOT NULL,
@@ -42,12 +50,16 @@ CREATE TABLE itens_vendidos(
     PRIMARY KEY(id)
 );
 
+DROP TABLE IF EXISTS vendedores;
+
 CREATE TABLE vendedores(
     id INT NOT NULL,
     cod INT NOT NULL,
     nome VARCHAR(150),
     PRIMARY KEY(id)
 );
+
+DROP TABLE IF EXISTS clientes;
 
 CREATE TABLE clientes(
      id INT NOT NULL,
@@ -58,6 +70,8 @@ CREATE TABLE clientes(
      total_compras INT,
      PRIMARY KEY (id)
 );
+
+DROP TABLE IF EXISTS emprestimos;
 
 CREATE TABLE emprestimos(
      id INT NOT NULL,
@@ -71,6 +85,8 @@ CREATE TABLE emprestimos(
      FOREIGN KEY (id_livro) REFERENCES livros (id)
 );
 
+DROP TABLE IF EXISTS reservas;
+
 CREATE TABLE reservas(
      id INT NOT NULL,
      cod INT NOT NULL,
@@ -82,6 +98,8 @@ CREATE TABLE reservas(
      FOREIGN KEY (id_livro) REFERENCES livros (id)
 );
 
+DROP TABLE IF EXISTS fornecedores;
+
 CREATE TABLE fornecedores(
      id INT NOT NULL,
      cod INT NOT NULL,
@@ -90,6 +108,8 @@ CREATE TABLE fornecedores(
      email VARCHAR(40),
      PRIMARY KEY (id)
 );
+
+DROP TABLE IF EXISTS pedidos_fornecedores;
 
 CREATE TABLE pedidos_fornecedores(
      id INT NOT NULL,
