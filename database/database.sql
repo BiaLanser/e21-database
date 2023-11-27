@@ -4,8 +4,8 @@ CREATE TABLE livros(
     titulo VARCHAR(150) NOT NULL,
     autor VARCHAR(150),
     preco VARCHAR(10),
-    id_secao INT
-    PRIMARY KEY(id)
+    id_secao INT,
+    PRIMARY KEY(id),
     FOREIGN KEY (id_secao) REFERENCES secao(id)
 );
 
@@ -22,12 +22,12 @@ CREATE TABLE vendas(
     cod INT NOT NULL,
     data_venda VARCHAR(150),
     numero VARCHAR(150),
-    item1 INT
+    item1 INT,
     id_cliente INT,
     id_vendedor INT,
-    FOREIGN KEY (id_cliente) REFERENCES clientes(id)
-    FOREIGN KEY (id_vendedor) REFERENCES vendedores(id)
-    FOREIGN KEY (id_item_vendido) REFERENCES Vendedores(id)
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id),
+    FOREIGN KEY (id_vendedor) REFERENCES vendedores(id),
+    FOREIGN KEY (id_item_vendido) REFERENCES Vendedores(id),
     PRIMARY KEY(id)
 );
 
@@ -68,7 +68,7 @@ CREATE TABLE emprestimos(
      id_livro INT,
      PRIMARY KEY (id),
      FOREIGN KEY (id_cliente) REFERENCES clientes (id),
-     FOREIGN KEY (id_livro) REFERENCES livros (id),
+     FOREIGN KEY (id_livro) REFERENCES livros (id)
 );
 
 CREATE TABLE reservas(
@@ -79,7 +79,7 @@ CREATE TABLE reservas(
      id_livro INT,
      PRIMARY KEY (id),
      FOREIGN KEY (id_cliente) REFERENCES clientes (id),
-     FOREIGN KEY (id_livro) REFERENCES livros (id),
+     FOREIGN KEY (id_livro) REFERENCES livros (id)
 );
 
 CREATE TABLE fornecedores(
