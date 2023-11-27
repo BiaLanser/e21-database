@@ -1,5 +1,5 @@
 -- Inserir 100 livros fictícios adicionais na tabela livros
-INSERT INTO Livros (id, cod, titulo, autor, preco)
+INSERT INTO livros (id, cod, titulo, autor, preco)
 VALUES
   (201, 1201, 'A Revolução dos Bichos', 'George Orwell', '22.00'),
   (202, 1202, 'O Hobbit', 'J.R.R. Tolkien', '28.00'),
@@ -217,7 +217,7 @@ VALUES
   (10, 1010, 'História Mundial', 'J10');
 
 -- Inserir 4 vendedores na tabela Vendedores
-INSERT INTO Vendedores (id, cod, nome)
+INSERT INTO vendedores (id, cod, nome)
 VALUES
   (1, 2001, 'João Silva'),
   (2, 2002, 'Ana Oliveira'),
@@ -226,7 +226,7 @@ VALUES
 
 -- Inserir 30 vendas com 5 itens cada na tabela Vendas
 -- As datas estão no formato YYYY-MM-DD e são fictícias
-INSERT INTO Vendas (id, cod, data_venda, numero, id_cliente, id_vendedor)
+INSERT INTO vendas (id, cod, data_venda, numero, id_cliente, id_vendedor)
 VALUES
   (1, 3001, '2023-01-15', 'VN001', 1, 1),
   (2, 3002, '2023-02-20', 'VN002', 2, 2),
@@ -261,7 +261,7 @@ VALUES
 
 -- Inserir 5 itens vendidos para cada venda na tabela Itens_Vendidos
 -- Os preços são fictícios
-INSERT INTO Itens_Vendidos (id, cod, sequencia, livro, quantidade, preco_unitario, preco_total)
+INSERT INTO itens_vendidos (id, cod, sequencia, livro, quantidade, preco_unitario, preco_total)
 VALUES
   (1, 4001, '001', 'Dom Casmurro', 2, 25, 50),
   (2, 4002, '002', 'Memórias Póstumas de Brás Cubas', 1, 30, 30),
