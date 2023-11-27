@@ -1,4 +1,4 @@
-CREATE TABLE Clientes(
+CREATE TABLE clientes(
      id INT NOT NULL,
      cod INT NOT NULL,
      nome VARCHAR(150),
@@ -8,7 +8,7 @@ CREATE TABLE Clientes(
      PRIMARY KEY (id)
 );
 
-CREATE TABLE Emprestimos(
+CREATE TABLE emprestimos(
      id INT NOT NULL,
      cod INT NOT NULL,
      data_emprestimo DATE,
@@ -20,7 +20,7 @@ CREATE TABLE Emprestimos(
      FOREIGN KEY (id_livro) REFERENCES Livros (id),
 );
 
-CREATE TABLE Reservas(
+CREATE TABLE reservas(
      id INT NOT NULL,
      cod INT NOT NULL,
      data_reserva DATE,
@@ -31,7 +31,7 @@ CREATE TABLE Reservas(
      FOREIGN KEY (id_livro) REFERENCES Livros (id),
 );
 
-CREATE TABLE Fornecedores(
+CREATE TABLE fornecedores(
      id INT NOT NULL,
      cod INT NOT NULL,
      nome VARCHAR(150),
@@ -40,7 +40,7 @@ CREATE TABLE Fornecedores(
      PRIMARY KEY (id)
 );
 
-CREATE TABLE Pedidos_fornecedores(
+CREATE TABLE pedidos_fornecedores(
      id INT NOT NULL,
      cod INT NOT NULL,
      data_pedido DATE,
